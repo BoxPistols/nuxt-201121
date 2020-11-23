@@ -7,7 +7,8 @@ export default function ({ $axios }) {
     // $xxx.リクエスト(c)
     if (process.env.QIITA_TOKEN) {
       //  リクエストヘッダーに認証情報 追加
-      config.headers.common['Authorization'] = process.env.QIITA_TOKEN
+      // config.headers.common['Authorization'] = process.env.QIITA_TOKEN
+      config.headers.common['Authorization'] =`Bearer ${process.env.QIITA_TOKEN}`
     }
     return config
   })
