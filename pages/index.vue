@@ -8,14 +8,17 @@
 
 <script>
 export default {
+  // 非同期 async await / マウント
   async mounted() {
     console.log(
       JSON.stringify(
-        await this.$axios.$get(
+        // JSONのテキスト化
+        await this.$axios.$get( // this.plugin-xxx.$get
+          // 非同期 get axios API
           'https://qiita.com/api/v2/items?query=tag:nuxt.js',
         ),
-        true,
-        '',
+        true, // bool
+        '', // 初期値
       ),
     )
   },

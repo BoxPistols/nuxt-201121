@@ -1,7 +1,13 @@
+/*
+ * インスタンス $axios
+ * export <- Nuxt 全体へインジェクション
+ */
 export default function ({ $axios }) {
   $axios.onRequest((config) => {
-    if (process.env.QIITA) {
-      config.headers.common['Authorization'] = process.env.QIITA
+    // $xxx.リクエスト(c)
+    if (process.env.QIITA_TOKEN) {
+      //  リクエストヘッダーに認証情報 追加
+      config.headers.common['Authorization'] = process.env.QIITA_TOKEN
     }
     return config
   })

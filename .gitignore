@@ -11,3 +11,6 @@ npm-debug.log
 dist
 
 .vscode/settings.json
+
+# env api
+.envrc
